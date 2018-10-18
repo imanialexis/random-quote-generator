@@ -11,7 +11,7 @@ class QuoteMachine extends Component {
             },
             hasQuote: true
         }
-        this.END_POINT ="https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=3"
+        this.END_POINT ="https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=33"
 
     }
     getRandomQuote = event => {
