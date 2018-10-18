@@ -20,7 +20,7 @@ class QuoteMachine extends Component {
         .then (data => {
             if(data[0].content && data[0].title && data[0].link) {
                 let { quote } = this.state;
-                quote.content = data[0].content;
+                quote.content = data[0].content.replace(/(<([^>]+)>)/ig,"");
                 quote.title = data[0].title;
                 quote.link = data[0].link;
                 this.setState( { quote }, () => {
@@ -37,13 +37,21 @@ class QuoteMachine extends Component {
     renderQuote = () => {
         const { title, content , link} = this.state.quote;
         return(
-            <div>
+            <div onClick={ () => this.shareOnTwitter(title, link)}>
                 <a href = { link } target ="_blank">
                 <h1> { title } </h1>
                 <p> { content } </p>
                 </a>
-                </div>
+            </div>
         )
+    }
+
+    shareOnTwitter = (text,link) => {
+    
+        window.open('http://twitter.com/share?url='+encodeURIComponent(link)+'&text='+encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+
+
+
     }
     render () {
         
