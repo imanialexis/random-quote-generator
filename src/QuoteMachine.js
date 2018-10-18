@@ -56,7 +56,7 @@ class QuoteMachine extends Component {
 
     shareOnTwitter = (title,content) => {
     
-        window.open('http://twitter.com/share?url='+encodeURIComponent(title)+'&text='+encodeURIComponent(content), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+        window.open('http://twitter.com/share?url='+encodeURIComponent()+'&text='+encodeURIComponent(content + title), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
 
 
 
