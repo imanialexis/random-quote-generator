@@ -18,11 +18,19 @@ class QuoteMachine extends Component {
         fetch(this.END_POINT)
         .then(response => response.json())
         .then (data => {
+
+            
             if(data[0].content && data[0].title && data[0].link) {
+                let random = Math.floor(Math.random() * (data.length));
+                console.log(random)
+        
                 let { quote } = this.state;
-                quote.content = data[0].content.replace(/(<([^>]+)>)/ig,"");
-                quote.title = data[0].title;
-                quote.link = data[0].link;
+                let something = data[random].content.replace(/(<([^>]+)>)/ig,"");
+                quote.content = something.replace(/(&#8217)/,"'");
+                console.log(quote.content)
+                // .replace(/(<([^>]+)>)/,"");
+                quote.title = data[random].title;
+                quote.link = data[random].link;
                 this.setState( { quote }, () => {
                     if(this.setState.hasQuote === false) {
                         this.setState( { hasQuote: true} )
@@ -37,7 +45,7 @@ class QuoteMachine extends Component {
     renderQuote = () => {
         const { title, content , link} = this.state.quote;
         return(
-            <div onClick={ () => this.shareOnTwitter(title, link)}>
+            <div onClick={ () => this.shareOnTwitter(title, content)}>
                 <a href = { link } target ="_blank">
                 <h1> { title } </h1>
                 <p> { content } </p>
@@ -46,9 +54,9 @@ class QuoteMachine extends Component {
         )
     }
 
-    shareOnTwitter = (text,link) => {
+    shareOnTwitter = (title,content) => {
     
-        window.open('http://twitter.com/share?url='+encodeURIComponent(link)+'&text='+encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+        window.open('http://twitter.com/share?url='+encodeURIComponent(title)+'&text='+encodeURIComponent(content), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
 
 
 
