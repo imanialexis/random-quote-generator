@@ -6,7 +6,8 @@ class QuoteMachine extends Component {
         this.state = {
             quote: {
                 content: '',
-                title: ''
+                title: '',
+                link: ''
             },
             hasQuote: true
         }
@@ -17,10 +18,11 @@ class QuoteMachine extends Component {
         fetch(this.END_POINT)
         .then(response => response.json())
         .then (data => {
-            if(data[0].content && data[0].title) {
+            if(data[0].content && data[0].title && data[0].link) {
                 let { quote } = this.state;
                 quote.content = data[0].content;
                 quote.title = data[0].title;
+                quote.link = data[0].link;
                 this.setState( { quote }, () => {
                     if(this.setState.hasQuote === false) {
                         this.setState( { hasQuote: true} )
@@ -33,12 +35,13 @@ class QuoteMachine extends Component {
         })
     }
     renderQuote = () => {
-        const { title, content } = this.state.quote;
+        const { title, content , link} = this.state.quote;
         return(
             <div>
+                <a href = { link } target ="_blank">
                 <h1> { title } </h1>
                 <p> { content } </p>
-
+                </a>
                 </div>
         )
     }
