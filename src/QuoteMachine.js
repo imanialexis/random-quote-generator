@@ -25,8 +25,8 @@ class QuoteMachine extends Component {
                 console.log(random)
         
                 let { quote } = this.state;
-                let something = data[random].content.replace(/(<([^>]+)>)/ig,"");
-                quote.content = something.replace(/(&#8217)/,"'");
+                // let something = data[random].content.replace(/(<([^>]+)>)/ig,"");
+                quote.content = data[random].content.replace(/(<([^>]+)>)/ig,"");
                 console.log(quote.content)
                 // .replace(/(<([^>]+)>)/,"");
                 quote.title = data[random].title;
