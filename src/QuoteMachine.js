@@ -45,7 +45,7 @@ class QuoteMachine extends Component {
     renderQuote = () => {
         const { title, content , link} = this.state.quote;
         return(
-            <div onClick={ () => this.shareOnTwitter(title, content)}>
+            <div onClick={ () => this.shareOnTwitter(title, content)} >
                 <a href = { link } target ="_blank">
                 <h1> { title } </h1>
                 <p> { content } </p>
@@ -67,7 +67,7 @@ class QuoteMachine extends Component {
         return (
        <Fragment>
             <h1>Quote Machine </h1>
-            <button onClick={this.getRandomQuote}>Click me to get a random quote</button>
+            <button onClick={this.getRandomQuote}  type="button" class="btn btn-success">Click me to get a random quote</button>
            <br />
            { hasQuote === true ? 
              this.renderQuote()
