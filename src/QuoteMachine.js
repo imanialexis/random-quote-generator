@@ -67,7 +67,7 @@ class QuoteMachine extends Component {
         return (
        <Fragment>
             <h1>Quote Machine </h1>
-            <button onClick={this.getRandomQuote}>Click me to get a random quote</button>
+            <button onClick={this.getRandomQuote}  type="button" class="btn btn-light">Click me to get a random quote</button>
            <br />
            { hasQuote === true ? 
              this.renderQuote()

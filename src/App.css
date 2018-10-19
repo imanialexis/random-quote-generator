@@ -1,10 +1,24 @@
 .App {
   text-align: center;
-
+  /* background-color: #1fc8db; */
 }
 
 body {
   background-color: #1fc8db;
- 
 }
 
+h1 {
+  padding-top: 20px
+}
+
+p {
+  font-style: italic;
+}
+
+a:link {
+  color: black;
+}
+
+a:hover {
+  color: red;
+}
