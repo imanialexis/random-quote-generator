@@ -47,7 +47,7 @@ class QuoteMachine extends Component {
         return(
             <div onClick={ () => this.shareOnTwitter(title, content)} >
                 <a href = { link } target ="_blank">
-                <h1> { title } </h1>
+                <h2> { title } </h2>
                 <p> { content } </p>
                 </a>
             </div>

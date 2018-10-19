@@ -17,6 +17,11 @@ h1 {
 
 }
 
+h2 {
+  color: white;
+  padding-top: 20px;
+}
+
 p {
   font-style: italic;
   color:#fbbc05;
