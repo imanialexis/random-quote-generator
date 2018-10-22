@@ -1,32 +1,35 @@
 
 body {
-  background-color: #4285f4;
+  background-color: #d5997a;
+
+  /* #4285f4 */
+  /* background-image: url('/images/7123.jpg') */
 
 }
 
 
 .App {
   text-align: center;
-  color: black;
+ 
 }
 
 
 h1 {
   padding-top: 20px;
-  color: black
+  color: #554c4c;
 
 }
 
 h2 {
-  color: white;
+  color: #554c4c;
   padding-top: 20px;
 }
 
 p {
   font-style: italic;
-  color:#fbbc05;
+  color:#f9f8f9;
   width: 50%;
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 a:link {
@@ -34,6 +37,6 @@ a:link {
 }
 
 a:hover {
-  color:#ea4335
+  color:#A7A6A5;
 
 }
