@@ -1,2 +1,3 @@
 
-## Random quote generater built using React and using the quotesondesign RESTful API.
+## Random quote generator built using React and using the quotesondesign RESTful API.
+
